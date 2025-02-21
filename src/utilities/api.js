@@ -51,9 +51,6 @@ export function isLanguageDetectorSupported() {
   return 'ai' in self && 'languageDetector' in self.ai;
 }
 
-
-
-
 export async function detectLanguage(text) {
   
   
@@ -87,6 +84,7 @@ export async function detectLanguage(text) {
     return { detectedLanguage: 'unknown', confidence: 0 };
   }
 }
+
 
 //Summarizer API
 

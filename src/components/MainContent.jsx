@@ -15,12 +15,14 @@ function MainContent({
   targetLanguage,
   setTargetLanguage,
   onSend,
+  onClearChat,
 }) 
   
 { 
 
   return (
     <div className="flex-1 flex flex-col bg-white -ml-80 md:ml-0">
+    
       {/* Output Area */}
       <OutputArea
         key={translatedText}
@@ -70,6 +72,14 @@ function MainContent({
         </button>
       </div>
 
+      <button
+        onClick={onClearChat}
+        className="mt-2 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+      >
+        Clear Chat
+      </button>
+
+
       {/* Input Area */}
       <InputArea onSend={onSend} />
     </div>
@@ -85,6 +95,7 @@ MainContent.propTypes = {
   onSummarize: PropTypes.func.isRequired, 
   onTranslate: PropTypes.func.isRequired, 
   onSend: PropTypes.func.isRequired,
+  onClearChat: PropTypes.func.isRequired,
   isSummarizing: PropTypes.bool.isRequired,
   isTranslating: PropTypes.bool.isRequired, 
   targetLanguage: PropTypes.string.isRequired, 

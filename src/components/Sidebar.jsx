@@ -1,6 +1,7 @@
 import React from 'react';
 function Sidebar() {
   const userName = localStorage.getItem('userName') || 'Guest User'; 
+  
   return (
     <div className="w-80 bg-gray-100 p-4 flex flex-col invisible md:visible">
       {/* Header */}

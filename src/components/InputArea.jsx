@@ -8,19 +8,19 @@ function InputArea({ onSend }) {
     setInputText(event.target.value);
   };
 
-  // Handle Enter key press
+ 
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
-      event.preventDefault(); // Prevent default form submission behavior
+      event.preventDefault();
       handleSend();
     }
   };
 
-  // Handle Send action
+  
   const handleSend = () => {
     if (inputText.trim() !== '') {
-      onSend(inputText); // Pass the input text to the parent component
-      setInputText(''); // Clear the input field after sending
+      onSend(inputText); 
+      setInputText(''); 
     }
   };
 
