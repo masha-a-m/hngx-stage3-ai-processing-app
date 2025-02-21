@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+
+Hide hamburger icon on larger screens
+.hamburger-icon {
+    display: block;
+    /* Show on smaller screens */
+    color: #fff;
+    /* White color for better visibility */
+}
+
+
+@media (min-width: 768px) {
+    .hamburger-icon {
+        display: none !important;
+        /* Hide the hamburger icon on larger screens */
+    }
+}
