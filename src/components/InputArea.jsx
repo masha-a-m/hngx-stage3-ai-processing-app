@@ -4,6 +4,27 @@ import PropTypes from 'prop-types';
 function InputArea({ onSend }) {
   const [inputText, setInputText] = useState('');
 
+  const handleInputChange = (event) => {
+    setInputText(event.target.value);
+  };
+
+  // Handle Enter key press
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault(); // Prevent default form submission behavior
+      handleSend();
+    }
+  };
+
+  // Handle Send action
+  const handleSend = () => {
+    if (inputText.trim() !== '') {
+      onSend(inputText); // Pass the input text to the parent component
+      setInputText(''); // Clear the input field after sending
+    }
+  };
+
+
   const handleSubmit = () => {
     if (!inputText.trim()) return;
 
@@ -16,7 +37,8 @@ function InputArea({ onSend }) {
     <div className="p-4 border-t border-gray-200 flex mb-8">
       <textarea
         value={inputText}
-        onChange={(e) => setInputText(e.target.value)}
+        onChange={handleInputChange}
+        onKeyPress={handleKeyPress}
         placeholder="Type or paste your text here..."
         className="w-11/12 p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-purple-500"
       />
@@ -24,7 +46,8 @@ function InputArea({ onSend }) {
       <button
         onClick={handleSubmit}
         className="ml-2 mt-8 bg-purple-500 hover:bg-purple-600 mb-10 text-white px-3 py-2 rounded transition duration-300"
-        title="Send" 
+        title="Send"
+        disabled={inputText.trim() === ''}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

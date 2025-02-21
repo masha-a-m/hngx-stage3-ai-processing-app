@@ -38,6 +38,7 @@ function App() {
   const handleSend = async (text) => {
       console.log('handleSend called with text:', text);
     setOutputText(text);
+    
     const result = await detectLanguage(text);
     setLanguage(result.detectedLanguage);
     // Reset summary and translation

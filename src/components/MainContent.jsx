@@ -17,7 +17,7 @@ function MainContent({
   onSend,
 }) 
   
-{
+{ 
 
   return (
     <div className="flex-1 flex flex-col bg-white -ml-80 md:ml-0">
