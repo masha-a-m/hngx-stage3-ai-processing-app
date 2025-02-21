@@ -74,7 +74,7 @@ function MainContent({
 
       <button
         onClick={onClearChat}
-        className="mt-2 bg-red-500 text-white px-4 py-2 rounded w-9/12 hover:bg-red-600"
+        className="mt-2 bg-red-500 text-white px-4 py-2 rounded w-4/12 ml-8 hover:bg-red-600"
       >
         Clear Chat
       </button>
